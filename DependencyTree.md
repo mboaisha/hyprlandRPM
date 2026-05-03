@@ -1,0 +1,32 @@
+- hyprland-git
+    - glaze-static
+        - N/A
+    - pkgconfig(aquamarine)
+        - Fulfilled: pkgconfig(hyprutils), pkgconfig(hyprwayland-scanner)
+    - pkgconfig(hyprcursor)
+        - Fulfilled: pkgconfig(hyprlang)
+    - pkgconfig(hyprgraphics)
+        - Fulfilled: pkgconfig(hyprutils)
+    - pkgconfig(hyprlang)
+        - Fulfilled: pkgconfig(hyprutils)
+    - pkgconfig(hyprutils)
+        - N/A
+    - pkgconfig(hyprwayland-scanner)
+        - N/A
+    - pkgconfig(hyprwire)
+        - Fulfilled: pkgconfig(hyprutils)
+- xdg-desktop-portal-hyprland
+    - Fulfilled: pkgconfig(hyprlang), pkgconfig(hyprutils), pkgconfig(hyprwayland-scanner)
+    - pkgconfig(hyprland-protocols)
+- hyprpaper
+    - Fulfilled: pkgconfig(hyprgraphics), pkgconfig(hyprlang), pkgconfig(hyprutils), pkgconfig(hyprwayland-scanner), pkgconfig(hyprwire)
+    - pkgconfig(hyprtoolkit)
+        - Fulfilled: pkgconfig(hyprgraphics), pkgconfig(hyprlang), pkgconfig(hyprutils)
+- hyprlock
+    - Fulfilled: pkgconfig(hyprgraphics), pkgconfig(hyprlang), pkgconfig(hyprutils), 
+    - cmake(hyprwayland-scanner)
+        - Dunno if this requires anything different, just 'cause it's cmake(xxx) instead of pkgconfig(xxx)
+- hypridle
+    - Fulfilled: cmake(hyprwayland-scanner), pkgconfig(hyprland-protocols), pkgconfig(hyprlang), pkgconfig(hyprutils)
+- hyprland-guiutils (replaces hyprland-qtutils)
+    - Fulfilled: pkgconfig(hyprlang), pkgconfig(hyprtoolkit)
