@@ -18,6 +18,7 @@
 - xdg-desktop-portal-hyprland
     - Fulfilled: pkgconfig(hyprlang), pkgconfig(hyprutils), pkgconfig(hyprwayland-scanner)
     - pkgconfig(hyprland-protocols)
+        - N/A
 - hyprpaper
     - Fulfilled: pkgconfig(hyprgraphics), pkgconfig(hyprlang), pkgconfig(hyprutils), pkgconfig(hyprwayland-scanner), pkgconfig(hyprwire)
     - pkgconfig(hyprtoolkit)
@@ -30,3 +31,28 @@
     - Fulfilled: cmake(hyprwayland-scanner), pkgconfig(hyprland-protocols), pkgconfig(hyprlang), pkgconfig(hyprutils)
 - hyprland-guiutils (replaces hyprland-qtutils)
     - Fulfilled: pkgconfig(hyprlang), pkgconfig(hyprtoolkit)
+
+---
+
+Build order:
+
+- Phase 1: No deps
+    - glaze
+    - hyprutils
+    - hyprwayland-scanner
+    - hyprland-protocols
+- Phase 2:
+    - aquamarine
+    - hyprgraphics
+    - hyprlang
+    - hyprwire
+- Phase 3:
+    - hyprtoolkit
+    - hyprcursor
+    - xdg-desktop-portal-hyprland
+    - hyprlock
+    - hypridle
+- Phase 4:
+    - hyprland-git
+    - hyprpaper
+    - hyprland-guiutils
