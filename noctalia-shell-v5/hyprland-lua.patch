@@ -1,0 +1,106 @@
+diff --git a/meson.build b/meson.build
+index cad80d73d..73bf9df41 100644
+--- a/meson.build
++++ b/meson.build
+@@ -567,6 +567,7 @@ _noctalia_sources = files(
+   'src/compositors/ext_workspace/ext_workspace_output_backend.cpp',
+   'src/compositors/ext_workspace/ext_workspace_backend.cpp',
+   'src/compositors/keyboard_backend.cpp',
++  'src/compositors/hyprland/hyprland_config_backend.cpp',
+   'src/compositors/hyprland/hyprland_output_backend.cpp',
+   'src/compositors/hyprland/hyprland_workspace_backend.cpp',
+   'src/compositors/hyprland/hyprland_keyboard_backend.cpp',
+diff --git a/src/compositors/hyprland/hyprland_config_backend.cpp b/src/compositors/hyprland/hyprland_config_backend.cpp
+new file mode 100644
+index 000000000..c2ba6ba5d
+--- /dev/null
++++ b/src/compositors/hyprland/hyprland_config_backend.cpp
+@@ -0,0 +1,29 @@
++#include "compositors/hyprland/hyprland_config_backend.h"
++#include "core/process.h"
++#include <json.hpp>
++#include <optional>
++
++namespace compositors::hyprland {
++
++  bool isLua() {
++    static std::optional<bool> cachedIsLua;
++
++    if (cachedIsLua.has_value()) {
++      return *cachedIsLua;
++    }
++
++    const auto result = process::runSync({"hyprctl", "-j", "status"});
++
++    if (result) {
++      try {
++        auto j = nlohmann::json::parse(result.out);
++        cachedIsLua = (j.value("configProvider", "") == "lua");
++      } catch (...) {
++        return false;
++      }
++    }
++
++    return cachedIsLua.value_or(false);
++  }
++
++} // namespace compositors::hyprland
+diff --git a/src/compositors/hyprland/hyprland_config_backend.h b/src/compositors/hyprland/hyprland_config_backend.h
+new file mode 100644
+index 000000000..a3597e5da
+--- /dev/null
++++ b/src/compositors/hyprland/hyprland_config_backend.h
+@@ -0,0 +1,5 @@
++#pragma once
++
++namespace compositors::hyprland {
++  bool isLua();
++}
+diff --git a/src/compositors/hyprland/hyprland_output_backend.cpp b/src/compositors/hyprland/hyprland_output_backend.cpp
+index 712a5da64..0326300af 100644
+--- a/src/compositors/hyprland/hyprland_output_backend.cpp
++++ b/src/compositors/hyprland/hyprland_output_backend.cpp
+@@ -1,9 +1,18 @@
++#include "compositors/hyprland/hyprland_config_backend.h"
+ #include "compositors/hyprland/hyprland_output_backend.h"
+ 
++#include <format>
+ #include "core/process.h"
+ 
+ namespace compositors::hyprland {
+ 
+-  bool setOutputPower(bool on) { return process::runAsync({"hyprctl", "dispatch", "dpms", on ? "on" : "off"}); }
++  bool setOutputPower(bool on) {
++    const std::string action = on ? "on" : "off";
++    if (isLua()) {
++      const std::string luaCmd = std::format("hl.dsp.dpms({{ action = \"{}\" }})", action);
++      return process::runAsync({"hyprctl", "dispatch", luaCmd});
++    }
++    return process::runAsync({"hyprctl", "dispatch", "dpms", action});
++  }
+ 
+ } // namespace compositors::hyprland
+diff --git a/src/shell/session/session_panel.cpp b/src/shell/session/session_panel.cpp
+index fc934783b..420ed561b 100644
+--- a/src/shell/session/session_panel.cpp
++++ b/src/shell/session/session_panel.cpp
+@@ -1,6 +1,7 @@
+ #include "shell/session/session_panel.h"
+ 
+ #include "compositors/compositor_detect.h"
++#include "compositors/hyprland/hyprland_config_backend.h"
+ #include "config/config_service.h"
+ #include "core/log.h"
+ #include "core/process.h"
+@@ -56,7 +57,10 @@ namespace {
+ 
+     switch (compositor) {
+     case compositors::CompositorKind::Hyprland:
+-      return process::launchFirstAvailable({{"hyprctl", "dispatch", "exit"}});
++      if (compositors::hyprland::isLua())
++        return process::launchFirstAvailable({{"hyprctl", "dispatch", "hl.dsp.exit()"}});
++      else
++        return process::launchFirstAvailable({{"hyprctl", "dispatch", "exit"}});
+     case compositors::CompositorKind::Sway:
+       return process::launchFirstAvailable({{"swaymsg", "exit"}, {"i3-msg", "exit"}});
+     case compositors::CompositorKind::Niri:
