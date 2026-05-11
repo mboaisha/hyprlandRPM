@@ -41,6 +41,8 @@ License:        BSD-3-Clause
 URL:            https://github.com/hyprwm/hyprland-plugins
 Source:         %{url}/archive/%{commit0}/%{name}-%{commit0}.tar.gz
 
+Patch:          https://github.com/hyprwm/hyprland-plugins/pull/657.patch
+
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
 BuildRequires:  %{hyprlandpkg}-devel
