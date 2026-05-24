@@ -1,0 +1,68 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Iosevka Comfy Motion;
+    font-size: 16px;
+}
+
+window#waybar {
+    background-color: #2c3045;
+    color: #ffffff;
+    border: 1px solid #979797;
+}
+
+#tray {
+    padding-right: 20px;
+}
+
+#custom-launcher {
+    padding-left: 10px;
+    padding-right: 5px;
+    background: #6ae4b9;
+    color: #000000;
+    margin: 1px;
+}
+
+#workspaces {
+}
+
+#workspaces button {
+    background: #4a4f6a;
+    border-radius: 0px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    color: #ffffff;
+    font-size: 16px;
+    /* border: 1px solid #61647a; */
+}
+
+#workspaces button.active {
+    background: #0d0e1c;
+    font-weight: bold;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    background-color: #6ae4b9;
+}
+#pulseaudio-slider trough {
+    min-height: 2px;
+    min-width: 80px;
+    border-radius: 0px;
+    background-image: none;
+    background-color: #9f9690;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: #6ae4b9;
+    background-image: none;
+}
+
+#wireplumber {
+    margin-right: 15px;
+}
