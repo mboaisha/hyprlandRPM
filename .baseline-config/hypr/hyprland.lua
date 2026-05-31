@@ -22,3 +22,7 @@ require("configs/binds.lua")
 require("configs/windowRules.lua")
 -- Environmental Variables
 require("configs/envs.lua")
+-- miscellenous 
+require("configs/misc.lua")
+-- Window rules
+require("configs/rules.lua")

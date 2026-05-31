@@ -1,7 +1,7 @@
 local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(kitty))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(hyprlauncher))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(hyprlauncher))
 
 -- Move focus with mainMod + hjkl
 hl.bind(mainMod .. " + h",  hl.dsp.focus({ direction = "left" }))
