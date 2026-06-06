@@ -1,0 +1,5 @@
+[local-x86-64-rpmbuild]
+name=Local RPM Build Repo
+baseurl=file:///home/$(whoami)/rpmbuild/RPMS/x86_64
+enabled=1
+gpgcheck=0
