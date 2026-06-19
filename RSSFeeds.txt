@@ -2,7 +2,6 @@ https://github.com/hyprwm/aquamarine/releases.atom
 https://github.com/stephenberry/glaze/releases.atom
 https://github.com/hyprwm/hyprcursor/releases.atom
 https://github.com/hyprwm/hyprgraphics/releases.atom
-https://github.com/hyprwm/hyprgraphics/releases.atom
 https://github.com/hyprwm/hypridle/releases.atom
 https://github.com/hyprwm/hyprland-guiutils/releases.atom
 https://github.com/hyprwm/hyprland-protocols/releases.atom
