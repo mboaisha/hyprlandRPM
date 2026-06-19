@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Hyprland Ecosystem Release Feeds</title>
+  </head>
+  <body>
+    <outline text="Hyprland Releases" title="Hyprland Releases">
+      <outline type="rss" text="aquamarine" title="aquamarine" xmlUrl="https://github.com/hyprwm/aquamarine/releases.atom" htmlUrl="https://github.com/hyprwm/aquamarine/releases"/>
+      <outline type="rss" text="glaze" title="glaze" xmlUrl="https://github.com/stephenberry/glaze/releases.atom" htmlUrl="https://github.com/stephenberry/glaze/releases"/>
+      <outline type="rss" text="hyprcursor" title="hyprcursor" xmlUrl="https://github.com/hyprwm/hyprcursor/releases.atom" htmlUrl="https://github.com/hyprwm/hyprcursor/releases"/>
+      <outline type="rss" text="hyprgraphics" title="hyprgraphics" xmlUrl="https://github.com/hyprwm/hyprgraphics/releases.atom" htmlUrl="https://github.com/hyprwm/hyprgraphics/releases"/>
+      <outline type="rss" text="hypridle" title="hypridle" xmlUrl="https://github.com/hyprwm/hypridle/releases.atom" htmlUrl="https://github.com/hyprwm/hypridle/releases"/>
+      <outline type="rss" text="hyprland-guiutils" title="hyprland-guiutils" xmlUrl="https://github.com/hyprwm/hyprland-guiutils/releases.atom" htmlUrl="https://github.com/hyprwm/hyprland-guiutils/releases"/>
+      <outline type="rss" text="hyprland-protocols" title="hyprland-protocols" xmlUrl="https://github.com/hyprwm/hyprland-protocols/releases.atom" htmlUrl="https://github.com/hyprwm/hyprland-protocols/releases"/>
+      <outline type="rss" text="hyprland-qt-support" title="hyprland-qt-support" xmlUrl="https://github.com/hyprwm/hyprland-qt-support/releases.atom" htmlUrl="https://github.com/hyprwm/hyprland-qt-support/releases"/>
+      <outline type="rss" text="hyprlang" title="hyprlang" xmlUrl="https://github.com/hyprwm/hyprlang/releases.atom" htmlUrl="https://github.com/hyprwm/hyprlang/releases"/>
+      <outline type="rss" text="hyprlauncher" title="hyprlauncher" xmlUrl="https://github.com/hyprwm/hyprlauncher/releases.atom" htmlUrl="https://github.com/hyprwm/hyprlauncher/releases"/>
+      <outline type="rss" text="hyprlock" title="hyprlock" xmlUrl="https://github.com/hyprwm/hyprlock/releases.atom" htmlUrl="https://github.com/hyprwm/hyprlock/releases"/>
+      <outline type="rss" text="hyprpaper" title="hyprpaper" xmlUrl="https://github.com/hyprwm/hyprpaper/releases.atom" htmlUrl="https://github.com/hyprwm/hyprpaper/releases"/>
+      <outline type="rss" text="hyprpicker" title="hyprpicker" xmlUrl="https://github.com/hyprwm/hyprpicker/releases.atom" htmlUrl="https://github.com/hyprwm/hyprpicker/releases"/>
+      <outline type="rss" text="hyprpolkitagent" title="hyprpolkitagent" xmlUrl="https://github.com/hyprwm/hyprpolkitagent/releases.atom" htmlUrl="https://github.com/hyprwm/hyprpolkitagent/releases"/>
+      <outline type="rss" text="hyprpwcenter" title="hyprpwcenter" xmlUrl="https://github.com/hyprwm/hyprpwcenter/releases.atom" htmlUrl="https://github.com/hyprwm/hyprpwcenter/releases"/>
+      <outline type="rss" text="hyprqt6engine" title="hyprqt6engine" xmlUrl="https://github.com/hyprwm/hyprqt6engine/releases.atom" htmlUrl="https://github.com/hyprwm/hyprqt6engine/releases"/>
+      <outline type="rss" text="hyprshutdown" title="hyprshutdown" xmlUrl="https://github.com/hyprwm/hyprshutdown/releases.atom" htmlUrl="https://github.com/hyprwm/hyprshutdown/releases"/>
+      <outline type="rss" text="hyprsunset" title="hyprsunset" xmlUrl="https://github.com/hyprwm/hyprsunset/releases.atom" htmlUrl="https://github.com/hyprwm/hyprsunset/releases"/>
+      <outline type="rss" text="hyprsysteminfo" title="hyprsysteminfo" xmlUrl="https://github.com/hyprwm/hyprsysteminfo/releases.atom" htmlUrl="https://github.com/hyprwm/hyprsysteminfo/releases"/>
+      <outline type="rss" text="hyprtoolkit" title="hyprtoolkit" xmlUrl="https://github.com/hyprwm/hyprtoolkit/releases.atom" htmlUrl="https://github.com/hyprwm/hyprtoolkit/releases"/>
+      <outline type="rss" text="hyprutils" title="hyprutils" xmlUrl="https://github.com/hyprwm/hyprutils/releases.atom" htmlUrl="https://github.com/hyprwm/hyprutils/releases"/>
+      <outline type="rss" text="hyprwayland-scanner" title="hyprwayland-scanner" xmlUrl="https://github.com/hyprwm/hyprwayland-scanner/releases.atom" htmlUrl="https://github.com/hyprwm/hyprwayland-scanner/releases"/>
+      <outline type="rss" text="hyprwire" title="hyprwire" xmlUrl="https://github.com/hyprwm/hyprwire/releases.atom" htmlUrl="https://github.com/hyprwm/hyprwire/releases"/>
+      <outline type="rss" text="xdg-desktop-portal-hyprland" title="xdg-desktop-portal-hyprland" xmlUrl="https://github.com/hyprwm/xdg-desktop-portal-hyprland/releases.atom" htmlUrl="https://github.com/hyprwm/xdg-desktop-portal-hyprland/releases"/>
+    </outline>
+  </body>
+</opml>
